@@ -1,0 +1,16 @@
+---
+title: "Latest Articles"
+---
+
+<h1>Latest Articles</h1>
+
+<ul class="ul">
+  $for(posts)$
+  <li class="li">
+    <a href="$url$">$title$</a>
+$if(teaser)$
+    $teaser$
+$endif$
+  </li>
+  $endfor$  
+</ul>
