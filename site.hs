@@ -137,7 +137,8 @@ pandocWriterOpts :: WriterOptions
 pandocWriterOpts =
   defaultHakyllWriterOptions
     { writerExtensions = pandocExtensionsCustom,
-      writerHighlightStyle = Just codeHighlightStyle
+      writerHighlightStyle = Just codeHighlightStyle,
+      writerHTMLMathMethod = MathJax ""
     }
 
 pandocExtensionsCustom :: Extensions
