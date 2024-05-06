@@ -11,7 +11,7 @@
       ghcVersion = "ghc98";
       pkgs = import nixpkgs { system = system; };
 
-      example-haskell-nix-flake = pkgs.haskell.packages.${ghcVersion}.developPackage {
+      shell = pkgs.haskell.packages.${ghcVersion}.developPackage {
         root = ./.;
         returnShellEnv = true;
         modifier = drv: pkgs.haskell.lib.addBuildTools drv [
@@ -23,6 +23,6 @@
       };
     in
     {
-      devShells.${system}.default = example-haskell-nix-flake;
+      devShells.${system}.default = shell;
     };
 }
