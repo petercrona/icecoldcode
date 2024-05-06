@@ -145,16 +145,7 @@ pandocExtensionsCustom :: Extensions
 pandocExtensionsCustom =
   githubMarkdownExtensions
     <> extensionsFromList
-      [ Ext_fenced_code_attributes,
-        Ext_gfm_auto_identifiers,
-        Ext_implicit_header_references,
-        Ext_smart,
-        Ext_footnotes,
-        Ext_tex_math_dollars,
-        Ext_tex_math_double_backslash,
-        Ext_latex_macros,
-        Ext_raw_tex
-      ]
+      [Ext_tex_math_dollars]
 
 ----------
 -- Routing utilities
