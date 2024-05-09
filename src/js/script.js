@@ -1,73 +1,5 @@
 'use strict';
 
-(function postList() {
-    const list = document.querySelector("#latestArticlesList");
-
-    if (!list) {
-	return;
-    }
-    
-    let page = 0;
-    const showPerPage = 4;
-    const n = list.children.length;
-    const lastPage = Math.floor(n / showPerPage);
-    
-    if (lastPage === 0) {
-	return;
-    }
-    
-    const hideAll = () => {
-	for (let i = 0; i < n; i++) {
-	    list.children[i].hidden = true;
-	}
-    }
-
-    // add buttons
-    const prev = document.createElement("button");
-    prev.onclick = () => {
-	showNodes(--page);
-    };
-    prev.innerText = "Previous";
-    
-    const next = document.createElement("button");
-    next.onclick = () => {
-	showNodes(++page);
-    };
-    next.innerText = "Next";
-    
-    const showNodes = (pageNr) => {
-	hideAll();
-	const start = pageNr * showPerPage;
-	for (let i = start; i < Math.min(start + showPerPage, n); i++) {
-	    list.children[i].hidden = false;
-	}
-
-	prev.disabled = false;
-	next.disabled = false;
-	
-	if (pageNr === 0) {
-	    prev.disabled = true;
-	} else if (pageNr === lastPage) {
-	    next.disabled = true;
-	}
-
-	const newHeight = Math.max(
-	    list.scrollHeight,
-	    parseInt(list.style.height) || 0
-	);
-
-	list.style.height = `${newHeight}px`;
-    }
-
-    showNodes(0);
-
-    const buttonContainer = document.createElement("div");
-    buttonContainer.id = "latestArticleListNav";
-    buttonContainer.appendChild(prev);
-    buttonContainer.appendChild(next);
-    list.parentElement.appendChild(buttonContainer);
-})();
-
 (function footer() {
     const mainNavButton = document.querySelector("#mainNavButtonContainer > button");
     const mainNavContainer = document.querySelector("#mainNavContainer");
@@ -105,7 +37,7 @@
 
 	setTimeout(() => {
 	    block = false;
-	});
+	}, 500);
     };
 
 
@@ -150,4 +82,71 @@
 	lastScrollPos = window.scrollY;
 	footer.style.bottom = `${-accumulated}px`;
     });
+})();
+
+(function postList() {
+    const list = document.querySelector("#latestArticlesList");
+
+    if (!list) {
+	return;
+    }
+    
+    let page = 0;
+    const showPerPage = 4;
+    const n = list.children.length;
+    const lastPage = Math.floor(n / showPerPage);
+    
+    if (lastPage === 0) {
+	return;
+    }
+    
+    const hideAll = () => {
+	for (let i = 0; i < n; i++) {
+	    list.children[i].hidden = true;
+	}
+    }
+
+    const prev = document.createElement("button");
+    prev.onclick = () => {
+	showNodes(--page);
+    };
+    prev.innerText = "Previous";
+    
+    const next = document.createElement("button");
+    next.onclick = () => {
+	showNodes(++page);
+    };
+    next.innerText = "Next";
+    
+    const showNodes = (pageNr) => {
+	hideAll();
+	const start = pageNr * showPerPage;
+	for (let i = start; i < Math.min(start + showPerPage, n); i++) {
+	    list.children[i].hidden = false;
+	}
+
+	prev.disabled = false;
+	next.disabled = false;
+	
+	if (pageNr === 0) {
+	    prev.disabled = true;
+	} else if (pageNr === lastPage) {
+	    next.disabled = true;
+	}
+
+	const newHeight = Math.max(
+	    list.scrollHeight,
+	    parseInt(list.style.height) || 0
+	);
+
+	list.style.height = `${newHeight}px`;
+    }
+
+    showNodes(0);
+
+    const buttonContainer = document.createElement("div");
+    buttonContainer.id = "latestArticleListNav";
+    buttonContainer.appendChild(prev);
+    buttonContainer.appendChild(next);
+    list.parentElement.appendChild(buttonContainer);
 })();
