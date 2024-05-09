@@ -92,7 +92,6 @@
 	    || header.contains(ev.relatedTarget)
 	    || ev.relatedTarget === document.querySelector("html")
 	   ) {
-	    console.log('blocked');
 	    return;
 	}
 	
@@ -147,8 +146,7 @@
     
     document.addEventListener("scroll", (event) => {
 	const diff = window.scrollY - lastScrollPos;
-	const factor = diff > 0 ? 0.5 : 1;
-	accumulated = Math.min(Math.max(0, accumulated + diff * factor), footerHeight);
+	accumulated = Math.min(Math.max(0, accumulated + diff), footerHeight);
 	lastScrollPos = window.scrollY;
 	footer.style.bottom = `${-accumulated}px`;
     });
