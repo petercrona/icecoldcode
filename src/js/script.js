@@ -88,10 +88,11 @@
 
     const openWithHover = (ev) => {
 	if (block
-            || !ev.fromElement
-	    || header.contains(ev.fromElement)
-	    || ev.fromElement === document.querySelector("html")
+            || !ev.relatedTarget
+	    || header.contains(ev.relatedTarget)
+	    || ev.relatedTarget === document.querySelector("html")
 	   ) {
+	    console.log('blocked');
 	    return;
 	}
 	
@@ -136,4 +137,19 @@
     header.addEventListener('mouseover', openWithHover);
     mainNavButton.addEventListener('click', toggleWithClick);
     header.addEventListener('mouseleave', handleCloseMenu);
+})();
+
+(function navScrollBehavior() {
+    let accumulated = 0;
+    let lastScrollPos = window.scrollY;
+    const footer = document.querySelector("footer");
+    const footerHeight = footer.scrollHeight;
+    
+    document.addEventListener("scroll", (event) => {
+	const diff = window.scrollY - lastScrollPos;
+	const factor = diff > 0 ? 0.5 : 1;
+	accumulated = Math.min(Math.max(0, accumulated + diff * factor), footerHeight);
+	lastScrollPos = window.scrollY;
+	footer.style.bottom = `${-accumulated}px`;
+    });
 })();
