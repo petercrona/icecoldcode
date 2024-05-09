@@ -134,6 +134,7 @@ footer {
     transition: 0.2s height;
     padding: 0 var(--spacing);
     text-align: center;
+    height: 0;
 
     ul {
 	list-style: none;
