@@ -29,6 +29,10 @@ h1,h2,h3 {
     text-align: center;
 }
 
+h1 {
+    margin: calc(var(--spacing) * 2) 0;
+}
+
 h2 {
     margin-top: calc(var(--spacing) * 5);
 }
@@ -211,7 +215,7 @@ ul.center {
 #mainContainer {
     margin-bottom: 70lvh;
     display: flex;
-    min-height: 60svh;
+    min-height: 78svh;
     align-items: end;
 }
 
@@ -226,3 +230,24 @@ ul.center {
 }
 
 .eqn-num { display: none !important; }
+
+#latestArticlesList {
+    padding-left: calc(2*var(--spacing));
+}
+
+#latestArticleListNav {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing);
+    box-sizing: border-box;
+    margin: calc(2*var(--spacing));
+}
+
+#latestArticleListNav button {
+    padding: var(--spacing);
+    border: 1px solid var(--primary);
+    border-color: var(--primary);
+    background: transparent;
+    font-weight: 600;
+    text-transform: uppercase;
+}
