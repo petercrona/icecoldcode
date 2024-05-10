@@ -255,4 +255,5 @@ ul.center {
 
 .author {
     text-align: center;
+    margin-top: calc(5*var(--spacing));
 }
