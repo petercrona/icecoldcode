@@ -252,3 +252,7 @@ ul.center {
     font-weight: 600;
     text-transform: uppercase;
 }
+
+.author {
+    text-align: center;
+}
