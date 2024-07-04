@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Welcome</title>
+    <link href="/style.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+    <header>
+      <div hidden id="headerLogin">
+        <button id="loginButton">Log In</button>
+        <button id="registerButton">Register</button>
+      </div>
+
+      <div hidden id="headerAuthenticated">
+        <strong
+          >Hej <span id="headerAuthenticated__name"></span> from
+          <span id="headerAuthenticated__company"></span
+        ></strong>
+        <button id="headerAuthenticated__logoutButton">Log Out</button>
+      </div>
+    </header>
+
+    <main>
+      <h1>Greetings</h1>
+      <button hidden id="writeGreetingButton">Write Greeting</button>
+      <ul id="greetingsList"></ul>
+    </main>
+
+    <dialog id="registerDialog">
+      <form method="dialog">
+        <h1>Register</h1>
+
+        <label>
+          <span>Company</span>
+          <input name="companyId" required type="text" />
+        </label>
+
+        <label>
+          <span>User</span>
+          <input name="username" required type="text" />
+        </label>
+
+        <label>
+          <span>Password</span>
+          <input name="password" required type="password" />
+        </label>
+
+        <fieldset>
+          <legend>Roles</legend>
+          <label class="checkbox">
+            <input name="roles[]" type="checkbox" value="ROLE_ADMIN" />
+            <span>Admin</span>
+          </label>
+        </fieldset>
+
+        <button type="submit">Register</button>
+      </form>
+    </dialog>
+
+    <dialog id="loginDialog">
+      <form method="dialog">
+        <h1>Log In</h1>
+        <label>
+          <span>User</span>
+          <input name="username" placeholder="test" required type="text" />
+        </label>
+        <label>
+          <span>Password</span>
+          <input name="password" placeholder="test" required type="password" />
+        </label>
+
+        <p class="error" hidden>Login failed</p>
+
+        <button type="submit">Log In</button>
+      </form>
+    </dialog>
+
+    <dialog id="greetingDialog">
+      <form method="dialog">
+        <h1>Write your Greeting</h1>
+        <textarea name="message" placeholder="Your message" required></textarea>
+        <button type="submit">Post Greeting</button>
+      </form>
+    </dialog>
+
+    <script src="/script.js" type="module"></script>
+  </body>
+</html>

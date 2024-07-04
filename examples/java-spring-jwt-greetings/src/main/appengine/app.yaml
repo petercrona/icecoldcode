@@ -1,0 +1,7 @@
+runtime: java21
+env_variables:
+  SPRING_PROFILES_ACTIVE: 'dev'
+
+automatic_scaling:
+  min_instances: 0
+  max_instances: 1

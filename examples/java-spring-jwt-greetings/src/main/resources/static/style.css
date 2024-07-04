@@ -1,0 +1,116 @@
+:root {
+  --main-bg-color: #0d1282;
+  --main-text-color: #eeeded;
+  --sec-bg-color: #ffb8b8;
+  --sec-text-color: #0d1282;
+}
+
+body {
+  background: var(--sec-bg-color);
+  color: var(--sec-text-color);
+  margin: 8px;
+}
+
+dialog::backdrop {
+  background-color: salmon;
+}
+
+header {
+  margin: -8px -8px 20px;
+  padding: 8px;
+  background: var(--main-bg-color);
+  color: var(--main-text-color);
+  min-height: 37px;
+  box-sizing: border-box;
+}
+
+header > div {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+
+  &[hidden] {
+    display: none;
+  }
+}
+
+main {
+  max-width: 300px;
+  margin: 0 auto;
+
+  > h1 {
+    margin: 0 0 15px;
+  }
+
+  > button {
+    margin: 0 0 20px;
+  }
+}
+
+#headerAuthenticated {
+  justify-content: space-between;
+}
+
+form {
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+
+  h1 {
+    margin: 0 0 10px;
+  }
+
+  fieldset {
+    margin: 0;
+    padding: 0;
+    border: 0;
+
+    legend {
+      padding: 0;
+      margin-bottom: 5px;
+    }
+  }
+
+  label {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+
+    span {
+      flex: 1;
+    }
+
+    &.checkbox {
+      gap: 3px;
+    }
+  }
+
+  button {
+    margin-top: 10px;
+  }
+}
+
+#greetingsList {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px;
+  max-width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.greeting {
+  border-radius: 10px;
+  padding: 10px;
+  background: var(--main-bg-color);
+  color: var(--main-text-color);
+
+  .topWrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 10px;
+    gap: 10px;
+  }
+}
