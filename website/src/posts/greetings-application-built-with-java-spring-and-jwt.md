@@ -3,7 +3,7 @@ title: "Greetings Application built with Java, Spring and JWT"
 published: 2024-07-17
 ---
 
-A demo is at the moment [available here](https://icecoldcode-spring-jwt-test.ey.r.appspot.com/). All code is available on [Github](https://github.com/petercrona/icecoldcode/tree/main/examples/java-spring-jwt-greetings).
+A demo is at the moment [available here](https://icecoldcode-spring-jwt-test.ey.r.appspot.com/) (**note that a new instance may spin up, so you might need to wait ~10s**). All code is available on [Github](https://github.com/petercrona/icecoldcode/tree/main/examples/java-spring-jwt-greetings).
 
 From time to time it is a good idea to start something from scratch, or at least go one level lower than you typically do. This article reports back on how I set up a REST-API with Java, Spring and JSON Web Token (JWT) to build a Greetings application. The end result isn't perfect, but I think it can be useful for anyone wanting to see how it can be done in a fairly clean way, as well as see a few other goodies, such as using Nix Flakes to improve the developer experience. I also built a basic front end using VanillaJS.
 
@@ -68,7 +68,7 @@ idea-community .
 
 No need for the right JDK to be installed, and no problem if another version of JDK was already installed. 
 
-Before jumping into the application code, let's have a quick look at JSON Web Token (JWT), as it is an important fundament for understanding the rest.
+Before jumping into the application code, let's have a quick look at JSON Web Token (JWT), as it is an important foundation for understanding the rest.
 
 ## JSON Web Token
 
