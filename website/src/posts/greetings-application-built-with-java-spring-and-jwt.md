@@ -1,5 +1,5 @@
 ---
-title: "A Greetings Application built with Java, Spring and JWT"
+title: "Greetings Application built with Java, Spring and JWT"
 published: 2024-07-17
 ---
 
