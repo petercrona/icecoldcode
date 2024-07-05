@@ -16,7 +16,7 @@ First step for any project is to figure out what to do. "Hello World" is a littl
 3. As a user I want to be able to delete my own greetings.
 4. As an admin I want to be able to delete greetings posted by anyone in my company.
 
-Wortwhile to define:
+Worthwhile to define:
 
 * **Visitor**: Anyone visiting the page
 * **User**: Anyone authenticated, associated with a company.
