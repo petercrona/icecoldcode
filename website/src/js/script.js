@@ -68,6 +68,11 @@
     header.addEventListener('mouseover', openWithHover);
     mainNavButton.addEventListener('click', toggleWithClick);
     header.addEventListener('mouseleave', handleCloseMenu);
+
+    // close on init, e.g. when back button used.
+    window.addEventListener('pageshow', (event) => {
+	handleCloseMenu();
+    });
 })();
 
 (function navScrollBehavior() {
@@ -84,9 +89,9 @@
 
 	let diff = 0;
 
-	if (window.scrollY > bottomAccumulationThreshold) {
-	    // start to show at bottom of page
-	    diff = bottomAccumulationThreshold - window.scrollY;
+	if (window.scrollY > bottomAccumulationThreshold - 5) {
+	    // show at bottom of page
+	    diff = -999;
 	} else {
 	    diff = window.scrollY - lastScrollPos;
 	}
