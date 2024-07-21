@@ -75,9 +75,22 @@
     let lastScrollPos = window.scrollY;
     const footer = document.querySelector("footer");
     const footerHeight = footer.scrollHeight;
-    
+
     document.addEventListener("scroll", (event) => {
-	const diff = window.scrollY - lastScrollPos;
+	const bottomAccumulationThreshold =
+	      document.documentElement.scrollHeight
+	      - window.innerHeight
+	      - footerHeight;
+
+	let diff = 0;
+
+	if (window.scrollY > bottomAccumulationThreshold) {
+	    // start to show at bottom of page
+	    diff = bottomAccumulationThreshold - window.scrollY;
+	} else {
+	    diff = window.scrollY - lastScrollPos;
+	}
+
 	accumulated = Math.min(Math.max(0, accumulated + diff), footerHeight);
 	lastScrollPos = window.scrollY;
 	footer.style.bottom = `${-accumulated}px`;
