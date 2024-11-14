@@ -215,9 +215,13 @@ ul.center {
 
 #mainContainer {
     margin-bottom: 70lvh;
-    display: flex;
-    min-height: 78svh;
-    align-items: end;
+}
+
+.indexPageContainer {
+    height: 100lvh;
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
 }
 
 .katex-display {
