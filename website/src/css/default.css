@@ -27,6 +27,7 @@ h1,h2,h3 {
     line-height:1.2em;
     font-family: serif;
     text-align: center;
+    text-wrap: balance;
 }
 
 h1 {
